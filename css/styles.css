@@ -33,6 +33,17 @@ nav button {
     transition: background-color 0.3s ease;
 }
 
+a {
+    color: white;
+    padding: 15px 20px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
 nav button:hover {
     background-color: #005f6b;
 }
