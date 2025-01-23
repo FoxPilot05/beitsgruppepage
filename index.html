@@ -1,69 +1,63 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beitsgruppe Ost</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <title>Updated Navbar</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    body {
+      font-family: "Lato", sans-serif;
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Beitsgruppe Ost</h1>
-    <p>Shaping the future of the IT industry</p>
-</header>
-
-<nav>
-    <button onclick="location.href='about.html'">About Us</button>
-    <button onclick="location.href='index.html'">Career</button>
-    <button onclick="window.location.href='leistungen.html'">Services</button>
-    <button onclick="window.location.href='firmengeschichte.html'">Company history</button>
-</nav>
-
-<section id="unternehmen">
-    <div class="container">
-        <h2 class="heading">About Beitsgruppe Ost</h2>
-        <p class="subheading">Beitsgruppe Ost is a leading provider of hardware and software solutions, specializing in tailor-made IT infrastructures for companies of all sizes.</p>
-        <p>Our customer structure includes small businesses (SMEs), medium-sized companies and large enterprises. We offer customized solutions and comprehensive support options to meet the different needs of our customers.</p>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleMenu()" title="Toggle Navigation Menu">
+      <i class="fa fa-bars"></i>
+    </a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
+    <a href="/about.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+    <a href="#services" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SERVICES</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
+    <div class="w3-dropdown-hover w3-hide-small">
+      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
+      <div class="w3-dropdown-content w3-bar-block w3-card-4">
+        <a href="#" class="w3-bar-item w3-button">Blog</a>
+        <a href="#" class="w3-bar-item w3-button">Portfolio</a>
+        <a href="#" class="w3-bar-item w3-button">Careers</a>
+      </div>
     </div>
-</section>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-right">
+      <i class="fa fa-search"></i>
+    </a>
+  </div>
+</div>
 
-<section id="karriere">
-    <div class="container">
-        <h2 class="heading">Career at Beitsgruppe Ost</h2>
-        <p class="subheading">We are looking for talented and committed employees who want to shape the digital future together with us.</p>
+<!-- Navbar for small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">ABOUT</a>
+  <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">SERVICES</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">CONTACT</a>
+  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">BLOG</a>
+</div>
 
-        <div class="job-listing">
-            <div class="job-card">
-                <h3>Softwaredeveloper</h3>
-                <p>Responsibility for the development and implementation of customized software solutions for our customers.</p>
-                <p>Requirements: Experience in software development, knowledge of common programming languages, ability to work in a team.</p>
-            </div>
-            <div class="job-card">
-                <h3>IT-Servicetechnician</h3>
-                <p>Installation, maintenance and support of our customers' IT infrastructure.</p>
-                <p>Requirements: Technical know-how, service orientation, experience in support.</p>
-            </div>
-            <div class="job-card">
-                <h3>Sales representative</h3>
-                <p>Advising and selling our IT products and services to new and existing customers.</p>
-                <p>Requirements: Experience in sales, strong communication skills, enjoy customer contact.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="kontakt">
-    <div class="container">
-        <h2 class="heading">Contact</h2>
-        <p>Are you interested in a career at Beitsgruppe Ost? Contact us for more information!</p>
-        <p>Email: <a href="mailto:kontakt@beitsgruppeost.de">kontakt@beitsgruppeost.de</a></p>
-    </div>
-</section>
-
-<footer>
-    <p>© 2024 Beitsgruppe Ost. No rights reserved.</p>
-</footer>
+<script>
+  // Toggle the menu on small screens
+  function toggleMenu() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+      x.className += " w3-show";
+    } else {
+      x.className = x.className.replace(" w3-show", "");
+    }
+  }
+</script>
 
 </body>
 </html>
