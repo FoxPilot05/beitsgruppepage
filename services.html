@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beitsgruppe Ost</title>
+    <title>Leistungen - Beitsgruppe Ost</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -20,7 +20,7 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="about.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT US</a>
         <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CAREER</a>
-        <a href="leistungen.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SERVICES</a>
+        <a href="leistungen.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-red">SERVICES</a>
         <a href="firmengeschichte.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">HISTORY</a>
         <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
     </div>
@@ -29,54 +29,54 @@
 <!-- Page content -->
 <div class="w3-content" style="max-width:1200px;margin-top:80px">
 
-    <!-- About Section -->
-    <div class="w3-container w3-padding-64" id="about">
-        <h2 class="w3-wide w3-center">ABOUT BEITSGRUPPE OST</h2>
-        <p class="w3-opacity w3-center"><i>Shaping the future of the IT industry</i></p>
-        <p class="w3-justify">Beitsgruppe Ost is a leading provider of hardware and software solutions, specializing in tailor-made IT infrastructures for companies of all sizes. Our customer structure includes small businesses (SMEs), medium-sized companies, and large enterprises. We offer customized solutions and comprehensive support options to meet the different needs of our customers.</p>
-    </div>
-
-    <!-- Career Section -->
-    <div class="w3-container w3-padding-64" id="career">
-        <h2 class="w3-wide w3-center">CAREER AT BEITSGRUPPE OST</h2>
-        <p class="w3-opacity w3-center"><i>Join us in shaping the digital future</i></p>
+    <!-- Services Section -->
+    <div class="w3-container w3-padding-64" id="services">
+        <h2 class="w3-wide w3-center">UNSERE LEISTUNGEN</h2>
+        <p class="w3-opacity w3-center"><i>From hardware procurement to customized software development</i></p>
         <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
             <div class="w3-third w3-margin-bottom">
                 <div class="w3-card w3-white">
                     <div class="w3-container">
-                        <h3>Software Developer</h3>
-                        <p>Responsibility for the development and implementation of customized software solutions for our customers.</p>
-                        <p><strong>Requirements:</strong> Experience in software development, knowledge of common programming languages, ability to work in a team.</p>
+                        <h3>Hardware-Solutions</h3>
+                        <p>Tailored procurement and provision of hardware solutions, including workstations, servers, and network infrastructure.</p>
                     </div>
                 </div>
             </div>
             <div class="w3-third w3-margin-bottom">
                 <div class="w3-card w3-white">
                     <div class="w3-container">
-                        <h3>IT Service Technician</h3>
-                        <p>Installation, maintenance, and support of our customers' IT infrastructure.</p>
-                        <p><strong>Requirements:</strong> Technical know-how, service orientation, experience in support.</p>
+                        <h3>Software-Solutions</h3>
+                        <p>Customized software development, including both standard and bespoke applications tailored to your needs.</p>
                     </div>
                 </div>
             </div>
             <div class="w3-third w3-margin-bottom">
                 <div class="w3-card w3-white">
                     <div class="w3-container">
-                        <h3>Sales Representative</h3>
-                        <p>Advising and selling our IT products and services to new and existing customers.</p>
-                        <p><strong>Requirements:</strong> Experience in sales, strong communication skills, enjoy customer contact.</p>
+                        <h3>IT Consulting</h3>
+                        <p>Comprehensive IT consulting to analyze your needs and develop efficient strategies.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div class="w3-container w3-padding-64" id="contact">
-        <h2 class="w3-wide w3-center">CONTACT</h2>
-        <p class="w3-opacity w3-center"><i>Interested in joining us? Get in touch!</i></p>
-        <p class="w3-justify">Are you interested in a career at Beitsgruppe Ost? Contact us for more information!</p>
-        <p class="w3-justify">Email: <a href="mailto:kontakt@beitsgruppeost.de">kontakt@beitsgruppeost.de</a></p>
+        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card w3-white">
+                    <div class="w3-container">
+                        <h3>Support & Maintenance</h3>
+                        <p>Reliable support and maintenance to ensure smooth operation of your systems.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-third w3-margin-bottom">
+                <div class="w3-card w3-white">
+                    <div class="w3-container">
+                        <h3>Cloud-Solutions</h3>
+                        <p>Secure and scalable cloud services for flexible, location-independent work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 </div>
@@ -93,6 +93,18 @@
     </div>
     <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
+
+<script>
+// Toggle menu on small screens
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
 
 </body>
 </html>

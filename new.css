@@ -1,0 +1,150 @@
+/* General body styling */
+body {
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar styling */
+.w3-top .w3-bar {
+    background-color: #000;
+    color: #fff;
+}
+
+.w3-bar-item {
+    padding: 16px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.w3-bar-item:hover {
+    background-color: #575757;
+    color: #fff;
+}
+
+.w3-dropdown-hover .w3-dropdown-content {
+    background-color: #333;
+}
+
+.w3-dropdown-hover .w3-bar-item:hover {
+    background-color: #575757;
+}
+
+/* Navbar dropdown button */
+.w3-dropdown-hover .w3-padding-large {
+    padding: 16px;
+}
+
+/* Responsive menu styling */
+#w3-navDemo {
+    display: none;
+    margin-top: 46px;
+}
+
+.w3-hide-small {
+    display: none;
+}
+
+.w3-bar-block .w3-bar-item {
+    display: block;
+    text-align: left;
+}
+
+/* Slideshow styling */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: auto;
+}
+
+.w3-display-container {
+    position: relative;
+    text-align: center;
+}
+
+.w3-display-bottommiddle {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+}
+
+footer i {
+    margin: 5px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+footer i:hover {
+    color: #666;
+}
+
+/* Buttons */
+button {
+    border: none;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #575757;
+}
+
+/* Forms */
+.w3-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.w3-button {
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Utility classes */
+.w3-padding-large {
+    padding: 24px;
+}
+
+.w3-padding {
+    padding: 16px;
+}
+
+.w3-margin {
+    margin: 16px;
+}
+
+.w3-center {
+    text-align: center;
+}
+
+.w3-black {
+    background-color: #000;
+    color: #fff;
+}
+
+.w3-white {
+    background-color: #fff;
+    color: #000;
+}
