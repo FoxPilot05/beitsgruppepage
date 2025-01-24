@@ -78,6 +78,23 @@
     .menu:hover .menu-content {
       display: block;
     }
+    .flag-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .flag-button img {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .flag-button img:hover {
+      opacity: 0.8;
+    }
     .section {
       margin: 40px 0;
       padding: 20px;
@@ -134,6 +151,9 @@
   <div class="header">
     <h1>JOIN THE BEITSGRUPPE OST!</h1>
     <p>Your future starts here! Take the first step towards your dream job today!</p>
+    <button class="flag-button" onclick="window.location.href='example.url';" title="Switch Language">
+      <img src="/img/Flag_of_the_United_Kingdom_and_Germany.png" alt="German/US Flag">
+    </button>
     <div class="menu">
       <button>
         <span></span>
