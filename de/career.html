@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Über Beitsgruppe Ost</title>
+  <title>Werden Sie Teil unseres Teams - Beitsgruppe Ost</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -117,6 +117,24 @@
     .list li:last-child {
       border-bottom: none;
     }
+    .apply {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .apply a {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      color: #1a1a1a;
+      background-color: #00d9a5;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .apply a:hover {
+      background-color: #00c194;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -131,8 +149,8 @@
 <div class="container">
   <!-- Header Section -->
   <div class="header">
-    <h1>Über uns</h1>
-    <p>Ihr Partner für Startup-Technologien und Hard- oder Softwarelösungen</p>
+    <h1>Werden Sie teil unseres Teams</h1>
+    <p>Starten Sie Ihre spannende Karrierereise bei der Beitsgruppe Ost in Magdeburg!</p>
     <button class="flag-button" onclick="window.location.href='/beitsgruppepage/'" title="Switch Language">
       <img src="/beitsgruppepage/img/Flag_of_the_United_Kingdom_and_Germany.jpg" alt="German/UK Flag">
     </button>
@@ -143,49 +161,68 @@
         <span></span>
       </button>
       <div class="menu-content">
+        <a href="/beitsgruppepage/de/services.html">Unsere Leistungen Services</a>
         <a href="/beitsgruppepage/de/index.html">Home</a>
-        <a href="/beitsgruppepage/de/services.html">Unsere Leistungen</a>
-        <a href="/beitsgruppepage/de/career.html">Karriere</a>
+        <a href="/beitsgruppepage/de/about.html">Wer wir sind</a>
       </div>
     </div>
   </div>
 
-  <!-- Who We Are Section -->
-  <div class="section">
-    <h2>Wer wir sind</h2>
-    <p>Die Beitsgruppe Ost ist auf die Bereitstellung maßgeschneiderter Hard- und Softwarelösungen spezialisiert, die Startups und Unternehmen dabei unterstützen, ihre Ziele effizient zu erreichen. Unsere Expertise liegt in der Entwicklung innovativer und praktischer IT-Infrastrukturen.</p>
-  </div>
-
-  <!-- Success Stories Section -->
-  <div class="section">
-    <h2>Erfolgsgeschichten</h2>
-    <p>Ein Beispiel für unsere Wirkung ist <strong>Smart City Solutions</strong>. Mit unserer Hilfe entwickelten sie ein digitales Verwaltungstool für Kommunen. Wir stellten Hardware, Software und Prototyping-Unterstützung zur Verfügung, um ihre Vision Wirklichkeit werden zu lassen.</p>
-  </div>
-
-  <!-- Our Services Section -->
-  <div class="section">
-    <h2>Unsere Leistungen</h2>
+  <!-- Career Opportunities Section -->
+  <div class="section" id="opportunities">
+    <h2>Karrieremöglichkeiten</h2>
     <ul class="list">
-      <li><strong>Hardwarebeschaffung:</strong> Maßgeschneiderte Hardwareauswahl und -integration für Ihre Anforderungen.</li>
-      <li><strong>Individualsoftware:</strong> Entwicklung von Softwarelösungen, die auf Ihre Ziele abgestimmt sind.</li>
-      <li><strong>Prototyping:</strong> Von der Idee bis zum Prototyp machen wir Innovation greifbar.</li>
+      <li><strong>Ausbildungen:</strong>
+        <ul>
+          <li>Entwickler/in für Anwendungsentwicklung (2 Stellen/Jahr)</li>
+          <li>Entwickler für Systemintegration (2 Stellen/Jahr)</li>
+        </ul>
+      </li>
+      <li><strong>Duale Studien Programme:</strong>
+        <ul>
+          <li>Informatik</li>
+          <li>Wirtschaftsinformatik</li>
+        </ul>
+      </li>
+      <li><strong>Start Datum:</strong>
+        <ul>
+          <li>Ausbildung: August 1st</li>
+          <li>Duales Studium: Sommer Semester</li>
+        </ul>
+      </li>
     </ul>
   </div>
 
-  <!-- Contact Section -->
-  <div class="section">
-    <h2>Kontktiere uns</h2>
-    <p>Kontaktieren Sie uns für maßgeschneiderte Lösungen zu Ihren Herausforderungen:</p>
+  <!-- Why Join Us Section -->
+  <div class="section" id="benefits">
+    <h2>Warum wir?</h2>
+    <ul class="list">
+      <li><strong>Flexible Arbeitsoptionen:</strong> Bis zu 80 % Fernarbeit und Optionen für eine 3- bis 5-Tage-Arbeitswoche.</li>
+      <li><strong>Großzügiger Urlaub:</strong> 30 Urlaubstage/Jahr, plus zusätzliche Feiertage.</li>
+      <li><strong>Moderne Ausstattung:</strong> Hochmoderne Büroräume mit kostenlosen Getränken.</li>
+      <li><strong>Teamgeist:</strong> Monatliche Teamaktivitäten und Unterstützung für Eltern.</li>
+    </ul>
+  </div>
+
+  <!-- Applying Section -->
+  <div class="section" id="apply">
+    <h2>Bewirb dich jetzt!</h2>
+    <p>Deine Fähigkeiten und deine Motivation sind uns wichtig. Bereit mitzumachen?</p>
     <ul class="list">
       <li>Email: <a href="mailto:business@beitsgruppe-ost.com" style="color: #00d9a5;">business@beitsgruppe-ost.com</a></li>
-      <li>Vor Ort: Besuche uns in Magdeburg</li>
+      <li>Besuche uns in Magdeburg!</li>
+      <li>Online: <a href="https://beitsgruppe-ost.com" style="color: #00d9a5;">beitsgruppe-ost.com</a></li>
     </ul>
+    <div class="apply">
+      <a href="/beitsgruppepage/de/example.html">Bewirb dich!</a>
+      <a href="mailto:business@beitsgruppe-ost.com">Kontakt</a>
+    </div>
   </div>
 </div>
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2025 Beitsgruppe Ost. Alle Rechte vorbehalten.</p>
+  <p>&copy; 2025 Beitsgruppe Ost. All rights reserved.</p>
 </footer>
 
 </body>
