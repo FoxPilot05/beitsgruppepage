@@ -1,131 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Home - Beitsgruppe Ost</title>
+  <title>Join Beitsgruppe Ost</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: "Lato", sans-serif;
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00d9a5;
+    }
+    .header p {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .menu button {
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .menu button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #00d9a5;
+      margin: 5px 0;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #262626;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .menu-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+    .menu-content a:last-child {
+      border-bottom: none;
+    }
+    .menu-content a:hover {
+      background-color: #00d9a5;
+      color: #1a1a1a;
+    }
+    .menu:hover .menu-content {
+      display: block;
+    }
+    .flag-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .flag-button img {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .flag-button img:hover {
+      opacity: 0.8;
+    }
+    .section {
+      margin: 40px 0;
+      padding: 20px;
+      background-color: #262626;
+      border-radius: 10px;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: #00d9a5;
+      margin-bottom: 20px;
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+    }
+    .list li {
+      padding: 10px 0;
+      border-bottom: 1px dotted #555;
+    }
+    .list li:last-child {
+      border-bottom: none;
+    }
+    .apply {
+      text-align: center;
+      margin: 40px 0;
+    }
+    .apply a {
+      display: inline-block;
+      padding: 15px 30px;
+      margin: 10px;
+      color: #1a1a1a;
+      background-color: #00d9a5;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+    .apply a:hover {
+      background-color: #00c194;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #1a1a1a;
+      border-top: 1px solid #555;
     }
   </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-  <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleMenu()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-    <a href="/about.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-    <a href="/services.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SERVICES</a>
-    <a href="/contact.hmtl" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    <div class="w3-dropdown-hover w3-hide-small">
-      <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
-      <div class="w3-dropdown-content w3-bar-block w3-card-4">
-        <a href="#" class="w3-bar-item w3-button">Blog</a>
-        <a href="#" class="w3-bar-item w3-button">Portfolio</a>
-        <a href="#" class="w3-bar-item w3-button">Careers</a>
+<div class="container">
+  <!-- Header Section -->
+  <div class="header">
+    <h1>BEITSGRUPPE OST</h1>
+    <p>Your partner for Startup technologies and hardware or software solutions</p>
+    <button class="flag-button" onclick="window.location.href='example';" title="Switch Language">
+      <img src="/beitsgruppepage/img/Flag_of_the_United_Kingdom_and_Germany.jpg" alt="German/UK Flag">
+    </button>
+    <div class="menu">
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-content">
+        <a href="beitsgruppepage/services.html">Our Services</a>
+        <a href="beitsgruppepage/">Our Story</a>
+        <a href="beitsgruppepage/about.html">Who We Are</a>
+        <a href="beitsgruppepage/career.html">Join Our Team</a>
       </div>
     </div>
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-right">
-      <i class="fa fa-search"></i>
-    </a>
   </div>
-</div>
-
-<!-- Navbar for small screens -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">ABOUT</a>
-  <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">SERVICES</a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">CONTACT</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">BLOG</a>
-</div>
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:1200px;margin-top:80px">
 
   <!-- About Section -->
-  <div class="w3-container w3-padding-64" id="about">
-      <h2 class="w3-wide w3-center">ABOUT BEITSGRUPPE OST</h2>
-      <p class="w3-opacity w3-center"><i>Shaping the future of the IT industry</i></p>
-      <p class="w3-justify">Beitsgruppe Ost is a leading provider of hardware and software solutions, specializing in tailor-made IT infrastructures for companies of all sizes. Our customer structure includes small businesses (SMEs), medium-sized companies, and large enterprises. We offer customized solutions and comprehensive support options to meet the different needs of our customers.</p>
+  <div class="section" id="about">
+    <h2>About Beitsgruppe Ost</h2>
+    <p>Beitsgruppe Ost is the leading provider of hardware and software solutions, specializing in tailor-made IT infrastructures for companies of all sizes. Our customers range from small businesses to large enterprises, and we offer comprehensive support to meet their unique needs.</p>
   </div>
 
   <!-- Career Section -->
-  <div class="w3-container w3-padding-64" id="career">
-      <h2 class="w3-wide w3-center">CAREER AT BEITSGRUPPE OST</h2>
-      <p class="w3-opacity w3-center"><i>Join us in shaping the digital future</i></p>
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-          <div class="w3-third w3-margin-bottom">
-              <div class="w3-card w3-white">
-                  <div class="w3-container">
-                      <h3>Software Developer</h3>
-                      <p>Responsibility for the development and implementation of customized software solutions for our customers.</p>
-                      <p><strong>Requirements:</strong> Experience in software development, knowledge of common programming languages, ability to work in a team.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="w3-third w3-margin-bottom">
-              <div class="w3-card w3-white">
-                  <div class="w3-container">
-                      <h3>IT Service Technician</h3>
-                      <p>Installation, maintenance, and support of our customers' IT infrastructure.</p>
-                      <p><strong>Requirements:</strong> Technical know-how, service orientation, experience in support.</p>
-                  </div>
-              </div>
-          </div>
-          <div class="w3-third w3-margin-bottom">
-              <div class="w3-card w3-white">
-                  <div class="w3-container">
-                      <h3>Sales Representative</h3>
-                      <p>Advising and selling our IT products and services to new and existing customers.</p>
-                      <p><strong>Requirements:</strong> Experience in sales, strong communication skills, enjoy customer contact.</p>
-                  </div>
-              </div>
-          </div>
-      </div>
+  <div class="section" id="career">
+    <h2>Career at Beitsgruppe Ost</h2>
+    <ul class="list">
+      <li><strong>Software Developer:</strong> Develop and implement customized software solutions.</li>
+      <li><strong>IT Service Technician:</strong> Install, maintain, and support IT infrastructure.</li>
+      <li><strong>Sales Representative:</strong> Advise and sell IT products and services.</li>
+    </ul>
   </div>
 
   <!-- Contact Section -->
-  <div class="w3-container w3-padding-64" id="contact">
-      <h2 class="w3-wide w3-center">CONTACT</h2>
-      <p class="w3-opacity w3-center"><i>Interested in joining us? Get in touch!</i></p>
-      <p class="w3-justify">Are you interested in a career at Beitsgruppe Ost? Contact us for more information!</p>
-      <p class="w3-justify">Email: <a href="mailto:kontakt@beitsgruppeost.de">kontakt@beitsgruppeost.de</a></p>
+  <div class="section">
+    <h2>Contact</h2>
+    <p>Interested in joining us? Get in touch!</p>
+    <ul class="list">
+      <li>Email: <a href="mailto:kontakt@beitsgruppeost.de" style="color: #00d9a5;">kontakt@beitsgruppeost.de</a></li>
+      <li>Visit us in Magdeburg!</li>
+    </ul>
   </div>
 
+  <!-- Applying Section -->
+  <div class="section">
+    <h2>Applying Is Easy!</h2>
+    <p>Choose the option that suits you best:</p>
+    <ul class="list">
+      <li>By email: <a href="mailto:business@beitsgruppe-ost.com" style="color: #00d9a5;">business@beitsgruppe-ost.com</a></li>
+      <li>In person: Visit us in Magdeburg!</li>
+      <li>Online: Apply on our website under "Training and Careers."</li>
+    </ul>
+    <div class="apply">
+      <a href="https://beitsgruppe-ost.com">Apply Now</a>
+      <a href="mailto:business@beitsgruppe-ost.com">Contact Us</a>
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey">
-  <div class="w3-xlarge w3-padding-16">
-      <i class="fa fa-facebook-official w3-hover-opacity"></i>
-      <i class="fa fa-instagram w3-hover-opacity"></i>
-      <i class="fa fa-snapchat w3-hover-opacity"></i>
-      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-      <i class="fa fa-twitter w3-hover-opacity"></i>
-      <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+<footer>
+  <p>&copy; 2025 Beitsgruppe Ost. All rights reserved.</p>
 </footer>
-
-<script>
-  // Toggle the menu on small screens
-  function toggleMenu() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-      x.className += " w3-show";
-    } else {
-      x.className = x.className.replace(" w3-show", "");
-    }
-  }
-</script>
 
 </body>
 </html>
+
