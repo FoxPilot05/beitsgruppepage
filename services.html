@@ -1,130 +1,173 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Leistungen - Beitsgruppe Ost</title>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body {font-family: "Lato", sans-serif}
-        .mySlides {display: none}
-    </style>
+  <title>Our Services - Beitsgruppe Ost</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      padding: 40px 20px;
+      position: relative;
+    }
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      color: #00d9a5;
+    }
+    .header p {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .menu button {
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .menu button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #00d9a5;
+      margin: 5px 0;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #262626;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .menu-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+    .menu-content a:last-child {
+      border-bottom: none;
+    }
+    .menu-content a:hover {
+      background-color: #00d9a5;
+      color: #1a1a1a;
+    }
+    .menu:hover .menu-content {
+      display: block;
+    }
+    .flag-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .flag-button img {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .flag-button img:hover {
+      opacity: 0.8;
+    }
+    .section {
+      margin: 40px 0;
+      padding: 20px;
+      background-color: #262626;
+      border-radius: 10px;
+    }
+    .section h2 {
+      font-size: 2em;
+      color: #00d9a5;
+      margin-bottom: 20px;
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+    }
+    .list li {
+      padding: 10px 0;
+      border-bottom: 1px dotted #555;
+    }
+    .list li:last-child {
+      border-bottom: none;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      background-color: #1a1a1a;
+      border-top: 1px solid #555;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Navbar -->
-<div class="w3-top">
-    <div class="w3-bar w3-black w3-card">
-      <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="toggleMenu()" title="Toggle Navigation Menu">
-        <i class="fa fa-bars"></i>
-      </a>
-      <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-      <a href="/about.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-      <a href="/services.html" class="w3-bar-item w3-button w3-padding-large w3-hide-small">SERVICES</a>
-      <a href="/contact.hmtl" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-      <div class="w3-dropdown-hover w3-hide-small">
-        <button class="w3-padding-large w3-button" title="More">MORE <i class="fa fa-caret-down"></i></button>
-        <div class="w3-dropdown-content w3-bar-block w3-card-4">
-          <a href="#" class="w3-bar-item w3-button">Blog</a>
-          <a href="#" class="w3-bar-item w3-button">Portfolio</a>
-          <a href="#" class="w3-bar-item w3-button">Careers</a>
-        </div>
+<div class="container">
+  <!-- Header Section -->
+  <div class="header">
+    <h1>OUR SERVICES</h1>
+    <p>Discover our range of services tailored to your business needs</p>
+    <button class="flag-button" onclick="window.location.href='example';" title="Switch Language">
+      <img src="/beitsgruppepage/img/Flag_of_the_United_Kingdom_and_Germany.jpg" alt="German/UK Flag">
+    </button>
+    <div class="menu">
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-content">
+        <a href="/beitsgruppepage/">Our Story</a>
+        <a href="/beitsgruppepage/about.html">Who We Are</a>
+        <a href="/beitsgruppepage/career.html">Join Our Team</a>
       </div>
-      <a href="javascript:void(0)" class="w3-bar-item w3-button w3-hover-red w3-hide-small w3-right">
-        <i class="fa fa-search"></i>
-      </a>
     </div>
   </div>
 
-<!-- Navbar for small screens -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">ABOUT</a>
-    <a href="#services" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">SERVICES</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large" onclick="toggleMenu()">BLOG</a>
-</div>  
-
-<!-- Page content -->
-<div class="w3-content" style="max-width:1200px;margin-top:80px">
-
-    <!-- Services Section -->
-    <div class="w3-container w3-padding-64" id="services">
-        <h2 class="w3-wide w3-center">UNSERE LEISTUNGEN</h2>
-        <p class="w3-opacity w3-center"><i>From hardware procurement to customized software development</i></p>
-        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card w3-white">
-                    <div class="w3-container">
-                        <h3>Hardware-Solutions</h3>
-                        <p>Tailored procurement and provision of hardware solutions, including workstations, servers, and network infrastructure.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card w3-white">
-                    <div class="w3-container">
-                        <h3>Software-Solutions</h3>
-                        <p>Customized software development, including both standard and bespoke applications tailored to your needs.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card w3-white">
-                    <div class="w3-container">
-                        <h3>IT Consulting</h3>
-                        <p>Comprehensive IT consulting to analyze your needs and develop efficient strategies.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card w3-white">
-                    <div class="w3-container">
-                        <h3>Support & Maintenance</h3>
-                        <p>Reliable support and maintenance to ensure smooth operation of your systems.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="w3-third w3-margin-bottom">
-                <div class="w3-card w3-white">
-                    <div class="w3-container">
-                        <h3>Cloud-Solutions</h3>
-                        <p>Secure and scalable cloud services for flexible, location-independent work.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  <!-- Services Section -->
+  <div class="section" id="services">
+    <h2>Our Services</h2>
+    <ul class="list">
+      <li><strong>Hardware Solutions:</strong> Tailored procurement and provision of hardware solutions, including workstations, servers, and network infrastructure.</li>
+      <li><strong>Software Solutions:</strong> Customized software development, including both standard and bespoke applications tailored to your needs.</li>
+      <li><strong>IT Consulting:</strong> Comprehensive IT consulting to analyze your needs and develop efficient strategies.</li>
+      <li><strong>Support & Maintenance:</strong> Reliable support and maintenance to ensure smooth operation of your systems.</li>
+      <li><strong>Cloud Solutions:</strong> Secure and scalable cloud services for flexible, location-independent work.</li>
+    </ul>
+  </div>
 
 </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey">
-    <div class="w3-xlarge w3-padding-16">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-    </div>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+<footer>
+  <p>&copy; 2025 Beitsgruppe Ost. All rights reserved.</p>
 </footer>
-
-<script>
-// Toggle menu on small screens
-function myFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else { 
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
-</script>
 
 </body>
 </html>

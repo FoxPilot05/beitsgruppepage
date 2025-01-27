@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Career Opportunities at Beitsgruppe OST</title>
+  <title>Join Our Team - Beitsgruppe Ost</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -22,10 +22,78 @@
     .header {
       text-align: center;
       padding: 40px 20px;
+      position: relative;
     }
     .header h1 {
       font-size: 2.5em;
+      margin-bottom: 10px;
       color: #00d9a5;
+    }
+    .header p {
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .menu button {
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .menu button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #00d9a5;
+      margin: 5px 0;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #262626;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .menu-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+    .menu-content a:last-child {
+      border-bottom: none;
+    }
+    .menu-content a:hover {
+      background-color: #00d9a5;
+      color: #1a1a1a;
+    }
+    .menu:hover .menu-content {
+      display: block;
+    }
+    .flag-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .flag-button img {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .flag-button img:hover {
+      opacity: 0.8;
     }
     .section {
       margin: 40px 0;
@@ -81,27 +149,42 @@
 <div class="container">
   <!-- Header Section -->
   <div class="header">
-    <h1>Career Opportunities at Beitsgruppe OST</h1>
-    <p>Start your modern and exciting career with us in Magdeburg!</p>
+    <h1>JOIN OUR TEAM</h1>
+    <p>Start your exciting career journey with Beitsgruppe Ost in Magdeburg!</p>
+    <button class="flag-button" onclick="window.location.href='example';" title="Switch Language">
+      <img src="/beitsgruppepage/img/Flag_of_the_United_Kingdom_and_Germany.jpg" alt="German/UK Flag">
+    </button>
+    <div class="menu">
+      <button>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-content">
+        <a href="/beitsgruppepage/services.html">Our Services</a>
+        <a href="/beitsgruppepage/">Our Story</a>
+        <a href="/beitsgruppepage/about.html">Who We Are</a>
+      </div>
+    </div>
   </div>
 
-  <!-- Training Programs Section -->
-  <div class="section" id="training">
-    <h2>Our Training Programs</h2>
+  <!-- Career Opportunities Section -->
+  <div class="section" id="opportunities">
+    <h2>Career Opportunities</h2>
     <ul class="list">
-      <li><strong>Apprenticeships (m/w/d):</strong>
+      <li><strong>Apprenticeships:</strong>
         <ul>
-          <li>Developer for Application Development (2 spots per year)</li>
-          <li>Developer for System Integration (2 spots per year)</li>
+          <li>Developer for Application Development (2 spots/year)</li>
+          <li>Developer for System Integration (2 spots/year)</li>
         </ul>
       </li>
-      <li><strong>Dual Study Programs (m/w/d):</strong>
+      <li><strong>Dual Study Programs:</strong>
         <ul>
           <li>Informatics</li>
           <li>Business Informatics</li>
         </ul>
       </li>
-      <li>Start Dates:
+      <li><strong>Start Dates:</strong>
         <ul>
           <li>Apprenticeship: August 1st</li>
           <li>Dual Study: Summer Semester</li>
@@ -110,47 +193,25 @@
     </ul>
   </div>
 
-  <!-- Benefits Section -->
+  <!-- Why Join Us Section -->
   <div class="section" id="benefits">
-    <h2>What Makes Us Special</h2>
+    <h2>Why Join Us?</h2>
     <ul class="list">
-      <li><strong>Vacation & Work Hours:</strong>
-        <ul>
-          <li>30 vacation days/year, plus December 24th and New Year's Eve off</li>
-          <li>Flexible work schedules: 3- to 5-day workweek with up to 80% home office</li>
-          <li>Work abroad options, including 100% remote if needed</li>
-        </ul>
-      </li>
-      <li><strong>Community & Activities:</strong>
-        <ul>
-          <li>Monthly team meetings with activities like volleyball or concerts</li>
-          <li>Discounts for local gyms and pools</li>
-        </ul>
-      </li>
-      <li><strong>Work-Life Balance:</strong>
-        <ul>
-          <li>Part-time apprenticeship options (28 to 38 hours/week)</li>
-          <li>Support for parents with flexible schedules</li>
-          <li>Company car leasing options</li>
-        </ul>
-      </li>
-      <li><strong>Workplace Extras:</strong>
-        <ul>
-          <li>Free beverages, including a premium coffee machine</li>
-          <li>Modern office culture designed to inspire</li>
-        </ul>
-      </li>
+      <li><strong>Flexible Work Options:</strong> Up to 80% remote work and options for a 3- to 5-day workweek.</li>
+      <li><strong>Generous Vacation:</strong> 30 vacation days/year, plus additional holidays.</li>
+      <li><strong>Modern Facilities:</strong> State-of-the-art office spaces with free beverages.</li>
+      <li><strong>Team Spirit:</strong> Monthly team activities and support for parents.</li>
     </ul>
   </div>
 
   <!-- Applying Section -->
   <div class="section" id="apply">
-    <h2>Apply Today!</h2>
-    <p>Your personality and motivation matter more to us than grades. (But let’s avoid a six in Informatics or English!)</p>
+    <h2>Apply Now!</h2>
+    <p>Your skills and motivation matter to us. Ready to join?</p>
     <ul class="list">
       <li>Email: <a href="mailto:business@beitsgruppe-ost.com" style="color: #00d9a5;">business@beitsgruppe-ost.com</a></li>
-      <li>Visit us in Magdeburg</li>
-      <li>Online: Apply through our website at <a href="https://beitsgruppe-ost.com" style="color: #00d9a5;">Beitsgruppe-OST.com</a></li>
+      <li>Visit us in Magdeburg!</li>
+      <li>Online: <a href="https://beitsgruppe-ost.com" style="color: #00d9a5;">beitsgruppe-ost.com</a></li>
     </ul>
     <div class="apply">
       <a href="https://beitsgruppe-ost.com">Apply Now</a>
@@ -161,7 +222,7 @@
 
 <!-- Footer -->
 <footer>
-  <p>&copy; 2025 Beitsgruppe OST. All rights reserved.</p>
+  <p>&copy; 2025 Beitsgruppe Ost. All rights reserved.</p>
 </footer>
 
 </body>
