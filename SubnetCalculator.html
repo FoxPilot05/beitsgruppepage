@@ -1,125 +1,377 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Subnetz Rechner</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f2f5f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            width: 400px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        input, button {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-        }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        .result {
-            margin-top: 20px;
-            font-size: 14px;
-            background: #eef2f7;
-            padding: 10px;
-            border-radius: 8px;
-        }
-    </style>
+<meta charset="UTF-8" />
+<title>Subnetz Rechner - Beitsgruppe Ost</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      margin: 0;
+      padding: 40px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #262626;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    }
+    h1 {
+      color: #00d9a5;
+      text-align: center;
+      margin-bottom: 24px;
+      font-weight: 700;
+      font-size: 2em;
+    }
+    input, button, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      font-family: 'Roboto', sans-serif;
+      box-sizing: border-box;
+      background-color: #1a1a1a;
+      color: #fff;
+      border: 1px solid #00d9a5;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    input::placeholder, textarea::placeholder {
+      color: #666;
+    }
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #00c194;
+      background-color: #333;
+    }
+    button {
+      background-color: #00d9a5;
+      color: #1a1a1a;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      margin-top: 15px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #00c194;
+    }
+    .result {
+      margin-top: 30px;
+      background-color: #1a1a1a;
+      border: 1px solid #00d9a5;
+      border-radius: 10px;
+      padding: 20px;
+      font-size: 14px;
+      color: #ddd;
+    }
+    .result h3 {
+      color: #00d9a5;
+      margin-top: 0;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #ddd;
+    }
+    th, td {
+      border: 1px solid #00d9a5;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    th {
+      background-color: #004d40;
+      font-weight: 700;
+    }
+    td {
+      background-color: #262626;
+    }
+    hr {
+      border: 1px solid #00d9a5;
+      margin: 30px 0;
+      opacity: 0.3;
+    }
+    .menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .menu button {
+      background: none;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .menu button span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background-color: #00d9a5;
+      margin: 5px 0;
+    }
+    .menu-content {
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      background-color: #262626;
+      border-radius: 5px;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .menu-content a {
+      display: block;
+      padding: 10px 20px;
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+    .menu-content a:last-child {
+      border-bottom: none;
+    }
+    .menu-content a:hover {
+      background-color: #00d9a5;
+      color: #1a1a1a;
+    }
+    .menu:hover .menu-content {
+      display: block;
+    }
+    .flag-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+    }
+    .flag-button img {
+      width: 50px;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .flag-button img:hover {
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Subnetz Rechner</h1>
-    <input type="text" id="ip" placeholder="IP-Adresse (z.B. 192.168.1.1)">
-    <input type="text" id="subnet" placeholder="Subnetzmaske (z.B. 255.255.255.0)">
-    <button onclick="calculate()">Berechnen</button>
+    <div class="flag-button" onclick="window.location.href='/beitsgruppepage/de/SubnetCalculator.html'" title="Switch Language">
+        <img src="/beitsgruppepage/img/Flag_of_the_United_Kingdom_and_Germany.jpg" alt="German/UK Flag">
+    </div>
+      <div class="menu">
+        <button>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="menu-content">
+          <a href="/beitsgruppepage/services.html">Our Services</a>
+          <a href="/beitsgruppepage/about.html">Who We Are</a>
+          <a href="/beitsgruppepage/career.html">Join Our Team</a>
+          <a href="/beitsgruppepage/SubnetCalculator.html">Subnet Calculator</a>
+        </div>
+      </div>
 
-    <div class="result" id="result" style="display:none;">
+<div class="container">
+    <h1>Subnetz Rechner mit VLSM</h1>
+    <input type="text" id="ip" placeholder="IP-Adresse (z.B. 192.168.1.0)" />
+    <input type="text" id="subnet" placeholder="Subnetzmaske (z.B. 255.255.255.0)" />
+    <button onclick="calculateStandard()">Standard Subnetz berechnen</button>
+    
+    <hr style="margin: 25px 0;">
+
+    <textarea id="hostsInput" rows="3" placeholder="Benötigte Hosts (kommagetrennt, z.B. 100,50,20)"></textarea>
+    <button onclick="calculateAsymmetric()">Asymmetrische Subnetze berechnen</button>
+
+    <div class="result" id="resultStandard" style="display:none;">
+        <h3>Standard Subnetz Ergebnisse</h3>
         <p><strong>Netzwerkadresse:</strong> <span id="network"></span></p>
         <p><strong>Broadcastadresse:</strong> <span id="broadcast"></span></p>
         <p><strong>Erste Hostadresse:</strong> <span id="firsthost"></span></p>
         <p><strong>Letzte Hostadresse:</strong> <span id="lasthost"></span></p>
         <p><strong>Max. Hosts:</strong> <span id="hosts"></span></p>
     </div>
+
+    <div class="result" id="resultAsymmetric" style="display:none;">
+        <h3>Asymmetrische Subnetz Ergebnisse</h3>
+        <table id="subnetTable">
+            <thead>
+                <tr>
+                    <th>Subnetz #</th>
+                    <th>Netzwerkadresse</th>
+                    <th>Subnetzmaske</th>
+                    <th>Broadcastadresse</th>
+                    <th>Hosts</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 </div>
 
 <script>
+function ipToInt(ip) {
+    return ip.split('.').reduce((acc, oct) => (acc << 8) + parseInt(oct), 0) >>> 0;
+}
+
+function intToIp(int) {
+    return [(int >>> 24), (int >>> 16 & 255), (int >>> 8 & 255), (int & 255)].join('.');
+}
+
+function maskToPrefix(mask) {
+    let bin = ipToBinary(mask);
+    return (bin.match(/1/g) || []).length;
+}
+
 function ipToBinary(ip) {
     return ip.split('.').map(octet => ('00000000' + parseInt(octet).toString(2)).slice(-8)).join('');
 }
 
-function binaryToIp(binary) {
-    let ip = [];
-    for (let i = 0; i < 32; i += 8) {
-        ip.push(parseInt(binary.substring(i, i + 8), 2));
+function prefixToMask(prefix) {
+    let mask = [];
+    for(let i=0; i<4; i++) {
+        let bits = Math.min(8, prefix - i*8);
+        bits = bits < 0 ? 0 : bits;
+        mask.push( (0xFF << (8 - bits)) & 0xFF );
     }
-    return ip.join('.');
+    return mask.join('.');
 }
 
-function calculate() {
-    const ip = document.getElementById('ip').value;
-    const subnet = document.getElementById('subnet').value;
+function validateIp(ip) {
+    const parts = ip.trim().split('.');
+    if(parts.length !== 4) return false;
+    return parts.every(p => {
+        const n = parseInt(p);
+        return !isNaN(n) && n >= 0 && n <= 255;
+    });
+}
 
-    if (!validateIp(ip) || !validateIp(subnet)) {
+function calculateStandard() {
+    const ip = document.getElementById('ip').value.trim();
+    const subnet = document.getElementById('subnet').value.trim();
+
+    if(!validateIp(ip) || !validateIp(subnet)) {
         alert('Bitte gültige IP-Adresse und Subnetzmaske eingeben.');
         return;
     }
 
-    const ipBin = ipToBinary(ip);
-    const subnetBin = ipToBinary(subnet);
+    const ipInt = ipToInt(ip);
+    const subnetInt = ipToInt(subnet);
 
-    const networkBin = ipBin.split('').map((bit, idx) => (subnetBin[idx] === '1' ? bit : '0')).join('');
-    const broadcastBin = ipBin.split('').map((bit, idx) => (subnetBin[idx] === '1' ? bit : '1')).join('');
+    const networkInt = ipInt & subnetInt;
+    const broadcastInt = networkInt | (~subnetInt >>> 0);
 
-    const network = binaryToIp(networkBin);
-    const broadcast = binaryToIp(broadcastBin);
+    const firstHostInt = networkInt + 1;
+    const lastHostInt = broadcastInt - 1;
 
-    const firstHost = binaryToIp(networkBin.substring(0, 31) + '1');
-    const lastHost = binaryToIp(broadcastBin.substring(0, 31) + '0');
+    const maxHosts = Math.max(0, (broadcastInt - networkInt - 1));
 
-    const hostBits = subnetBin.split('0').length - 1;
-    const maxHosts = (2 ** hostBits) - 2;
-
-    document.getElementById('network').innerText = network;
-    document.getElementById('broadcast').innerText = broadcast;
-    document.getElementById('firsthost').innerText = firstHost;
-    document.getElementById('lasthost').innerText = lastHost;
+    document.getElementById('network').innerText = intToIp(networkInt);
+    document.getElementById('broadcast').innerText = intToIp(broadcastInt);
+    document.getElementById('firsthost').innerText = maxHosts > 0 ? intToIp(firstHostInt) : '-';
+    document.getElementById('lasthost').innerText = maxHosts > 0 ? intToIp(lastHostInt) : '-';
     document.getElementById('hosts').innerText = maxHosts;
 
-    document.getElementById('result').style.display = 'block';
+    document.getElementById('resultStandard').style.display = 'block';
+    document.getElementById('resultAsymmetric').style.display = 'none';
 }
 
-function validateIp(ip) {
-    const parts = ip.split('.');
-    if (parts.length !== 4) return false;
-    return parts.every(part => {
-        const n = parseInt(part);
-        return n >= 0 && n <= 255;
+function calculateAsymmetric() {
+    const ip = document.getElementById('ip').value.trim();
+    const subnet = document.getElementById('subnet').value.trim();
+    const hostsInput = document.getElementById('hostsInput').value.trim();
+
+    if(!validateIp(ip) || !validateIp(subnet)) {
+        alert('Bitte gültige IP-Adresse und Subnetzmaske eingeben.');
+        return;
+    }
+    if(!hostsInput) {
+        alert('Bitte die benötigten Hosts als kommagetrennte Zahlen eingeben.');
+        return;
+    }
+
+    let requestedHosts = hostsInput.split(',').map(h => parseInt(h.trim())).filter(h => !isNaN(h) && h > 0);
+    if(requestedHosts.length === 0) {
+        alert('Bitte mindestens eine gültige Hostanzahl eingeben.');
+        return;
+    }
+
+    requestedHosts.sort((a,b) => b - a); // Absteigend sortieren
+
+    const ipInt = ipToInt(ip);
+    const subnetInt = ipToInt(subnet);
+    const networkInt = ipInt & subnetInt;
+    const subnetPrefix = maskToPrefix(subnet);
+
+    // Errechne maximal verfügbare Hosts im Gesamtnetz
+    const maxHostsTotal = Math.max(0, ((~subnetInt) >>> 0) - 1);
+    if(requestedHosts.reduce((a,b) => a+b,0) > maxHostsTotal) {
+        alert('Summe der Hosts überschreitet die Kapazität des angegebenen Netzwerks!');
+        return;
+    }
+
+    // Hilfsfunktion: nächsthöhere Zweierpotenz >= hosts + 2 (Netzwerk+Broadcast)
+    function neededHostsToPrefix(hosts) {
+        let needed = hosts + 2; // Netzwerk + Broadcast
+        let bits = 0;
+        while((1 << bits) < needed) bits++;
+        return 32 - bits;
+    }
+
+    let currentNetInt = networkInt;
+    let results = [];
+
+    for(let i=0; i<requestedHosts.length; i++) {
+        const hostsNeeded = requestedHosts[i];
+        const prefix = neededHostsToPrefix(hostsNeeded);
+        const mask = prefixToMask(prefix);
+        const maskInt = ipToInt(mask);
+
+        const networkAddr = currentNetInt;
+        const broadcastAddr = networkAddr | (~maskInt >>> 0);
+        const hostsAvailable = (broadcastAddr - networkAddr - 1);
+
+        results.push({
+            subnetNumber: i + 1,
+            network: intToIp(networkAddr),
+            mask: mask,
+            broadcast: intToIp(broadcastAddr),
+            hosts: hostsAvailable
+        });
+
+        currentNetInt = broadcastAddr + 1; // Nächstes Subnetz beginnt nach diesem Broadcast
+    }
+
+    // Ausgabe in Tabelle
+    const tbody = document.querySelector('#subnetTable tbody');
+    tbody.innerHTML = ''; // Leeren
+
+    results.forEach(r => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${r.subnetNumber}</td>
+            <td>${r.network}</td>
+            <td>${r.mask}</td>
+            <td>${r.broadcast}</td>
+            <td>${r.hosts}</td>
+        `;
+        tbody.appendChild(tr);
     });
+
+    document.getElementById('resultStandard').style.display = 'none';
+    document.getElementById('resultAsymmetric').style.display = 'block';
 }
 </script>
 
