@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Subnetz Rechner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f5f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            width: 400px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 14px;
+            background: #eef2f7;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Subnetz Rechner</h1>
+    <input type="text" id="ip" placeholder="IP-Adresse (z.B. 192.168.1.1)">
+    <input type="text" id="subnet" placeholder="Subnetzmaske (z.B. 255.255.255.0)">
+    <button onclick="calculate()">Berechnen</button>
+
+    <div class="result" id="result" style="display:none;">
+        <p><strong>Netzwerkadresse:</strong> <span id="network"></span></p>
+        <p><strong>Broadcastadresse:</strong> <span id="broadcast"></span></p>
+        <p><strong>Erste Hostadresse:</strong> <span id="firsthost"></span></p>
+        <p><strong>Letzte Hostadresse:</strong> <span id="lasthost"></span></p>
+        <p><strong>Max. Hosts:</strong> <span id="hosts"></span></p>
+    </div>
+</div>
+
+<script>
+function ipToBinary(ip) {
+    return ip.split('.').map(octet => ('00000000' + parseInt(octet).toString(2)).slice(-8)).join('');
+}
+
+function binaryToIp(binary) {
+    let ip = [];
+    for (let i = 0; i < 32; i += 8) {
+        ip.push(parseInt(binary.substring(i, i + 8), 2));
+    }
+    return ip.join('.');
+}
+
+function calculate() {
+    const ip = document.getElementById('ip').value;
+    const subnet = document.getElementById('subnet').value;
+
+    if (!validateIp(ip) || !validateIp(subnet)) {
+        alert('Bitte gültige IP-Adresse und Subnetzmaske eingeben.');
+        return;
+    }
+
+    const ipBin = ipToBinary(ip);
+    const subnetBin = ipToBinary(subnet);
+
+    const networkBin = ipBin.split('').map((bit, idx) => (subnetBin[idx] === '1' ? bit : '0')).join('');
+    const broadcastBin = ipBin.split('').map((bit, idx) => (subnetBin[idx] === '1' ? bit : '1')).join('');
+
+    const network = binaryToIp(networkBin);
+    const broadcast = binaryToIp(broadcastBin);
+
+    const firstHost = binaryToIp(networkBin.substring(0, 31) + '1');
+    const lastHost = binaryToIp(broadcastBin.substring(0, 31) + '0');
+
+    const hostBits = subnetBin.split('0').length - 1;
+    const maxHosts = (2 ** hostBits) - 2;
+
+    document.getElementById('network').innerText = network;
+    document.getElementById('broadcast').innerText = broadcast;
+    document.getElementById('firsthost').innerText = firstHost;
+    document.getElementById('lasthost').innerText = lastHost;
+    document.getElementById('hosts').innerText = maxHosts;
+
+    document.getElementById('result').style.display = 'block';
+}
+
+function validateIp(ip) {
+    const parts = ip.split('.');
+    if (parts.length !== 4) return false;
+    return parts.every(part => {
+        const n = parseInt(part);
+        return n >= 0 && n <= 255;
+    });
+}
+</script>
+
+</body>
+</html>
